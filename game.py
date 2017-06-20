@@ -13,7 +13,7 @@ player = [0,0]
 def game(player):
 	print("Game called")
 
-	while player != (100,100):
+	while player != (10,10):
 
 		input("Press Enter For Next Move")
 
@@ -25,25 +25,29 @@ def game(player):
 		dice = throw_dice()
 		print("Dice Gives ",dice)
 
-		if no == 100 :
-			print("Exceeding 100")
-			break	
 
 		if no+dice > 100 and no + dice != 100 :
-			game(player)
+			print("Roll Again")
+			continue
 
 			
 
 		y=y+dice
 
 		if y>10 :
-			y=y+dice-10
+			y=y-10
 			x=x+1
+
+		if player == (10,10):
+			print("Limit Reached")
+			break
 
 		player[0] = x
 		player[1] = y
 		player = check_pos(player)
 
+
+	print("\nGame Ended")
 
 def throw_dice():
 	return random.randint(1,6)
