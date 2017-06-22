@@ -11,10 +11,9 @@ bad = [(17,7),(54,34),(64,60),(62,19),(87,24),(93,73),(95,75),(99,78),
 player = [0,0]
 
 def game(player):
-	print("Game called")
-
-	while player != (10,10):
-
+	no =0
+	while no != 100:
+		print("\n\n--------------************--------------------\n")
 		input("Press Enter For Next Move")
 
 		x=player[0]
@@ -58,16 +57,18 @@ def check_pos(player):
 	# player_pos = 
 	for check in bad:
 		if temp == check[0]:
-			print("\t\tMatch player at : {}".format(temp))
+			print("\n\n\t\t==================================\n\n")
+			print("\t\t|| Match player at : {} ||".format(temp))
 			player[0] = math.floor(check[1]/10)
 			player[1] = (check[1]%10)
 			temp = player[0]*10+player[1]
 			if check[0] > check[1]:
-				print("\t\tGot Bitten By Snake ")
+				print("\t\t|| Got Bitten By Snake ||")
 			else:
-				print("\t\tYayy!! Found A Ladder")
+				print("\t\t|| Yayy!! Found A Ladder ||")
 
-			print("\t\tPlayer Moved To ",temp)
+			print("\t\t|| Player Moved To  {} ||".format(temp))
+			print("\n\n\t\t==================================\n\n")
 
 	return player
 
