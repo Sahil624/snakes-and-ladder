@@ -25,7 +25,7 @@ def game(player):
 		print("Dice Gives ",dice)
 
 
-		if no+dice > 100 and no + dice != 100 :
+		if no + dice > 100 :
 			print("Roll Again")
 			continue
 
